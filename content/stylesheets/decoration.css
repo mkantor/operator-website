@@ -1,0 +1,115 @@
+/*
+This file contains colors, fonts, shadows, rounded corners, and other
+decorations.
+*/
+
+html {
+  --page: hsl(0deg, 0%, 90%);
+  --content: hsl(0deg, 0%, 10%);
+  --content-faded: hsl(0deg, 0%, 60%);
+  --highlight: hsl(188, 76%, 35%);
+  --selected: hsl(37, 88%, 48%);
+  --block: hsl(0deg, 0%, 100%);
+  --translucent: hsla(0deg, 0%, 50%, 0.5);
+  --shadow: hsla(0deg, 0%, 100%, 0.75);
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --page: hsl(0deg, 0%, 10%);
+    --content: hsl(0deg, 0%, 90%);
+    --content-faded: hsl(0deg, 0%, 40%);
+    --block: hsl(0deg, 0%, 0%);
+    --shadow: hsla(0deg, 0%, 0%, 0.75);
+  }
+}
+
+body {
+  background-color: var(--page);
+  color: var(--content);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+a {
+  color: var(--highlight);
+}
+a.current {
+  color: var(--selected);
+  text-decoration-color: var(--highlight);
+}
+a:focus,
+a:hover,
+a.current:focus,
+a.current:hover {
+  text-decoration-color: var(--selected);
+  outline-color: var(--selected);
+}
+a img {
+  border-style: solid;
+  border-color: var(--highlight);
+  border-width: 1px;
+}
+a:focus img,
+a:hover img {
+  border-color: var(--selected);
+}
+
+header h1 a {
+  color: var(--content);
+  text-decoration-color: var(--highlight);
+}
+
+pre,
+ul.commands {
+  background-color: var(--block);
+  border-color: var(--translucent);
+  border-radius: 0.3em;
+  border-width: 1px;
+  border-style: solid;
+  font-family: monospace;
+}
+ul.commands li:before {
+  /* the "prompt" */
+  color: var(--content-faded);
+}
+pre .comment,
+ul.commands .comment {
+  color: var(--content-faded);
+}
+pre,
+ul.commands,
+img {
+  box-shadow: 0 0 0.5em var(--shadow);
+}
+
+h2 {
+  text-decoration: underline;
+  text-decoration-color: var(--translucent);
+  text-decoration-thickness: 1px;
+}
+
+details summary {
+  cursor: pointer;
+}
+details:not([open]) summary {
+  outline-color: var(--selected);
+}
+details:not([open]) summary::marker {
+  color: var(--highlight);
+}
+details summary:hover::marker,
+details summary:focus::marker {
+  color: var(--selected);
+}
+
+code {
+  background-color: var(--block);
+  border-color: var(--translucent);
+  border-radius: 0.3em;
+  border-width: 1px;
+  border-style: solid;
+  white-space: nowrap;
+  padding: 0.2em 0.3em;
+}
+a:hover code {
+  border-color: var(--selected);
+}

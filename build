@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -o errexit
+set -o pipefail
+set -o nounset
+trap 'echo "$0: line $LINENO: exit status of last command: $?" >&2' ERR
+
+this_dir=$(cd -P "$(dirname "$0")" && pwd)
+docker build --tag=operator-website "$this_dir"

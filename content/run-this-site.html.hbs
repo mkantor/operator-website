@@ -1,0 +1,28 @@
+{{#> page.html.hbs}}
+  {{get "/header"}}
+
+  <article>
+    <div class="group">
+      <p>
+        <a href="https://github.com/mkantor/operator-website">This site</a> is
+        served by Operator. If you want to play around with it, first make sure
+        you have
+        <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+          >git</a
+        >
+        and <a href="https://docs.docker.com/get-docker/">docker</a> installed,
+        then try this:
+      </p>
+      <ul class="commands">
+        <li>git clone https://github.com/mkantor/operator-website.git</li>
+        <li>operator-website/build</li>
+        <li>operator-website/run 8080</li>
+      </ul>
+    </div>
+
+    <p>
+      The site will be at
+      <a href="http://localhost:8080">http://localhost:8080</a>.
+    </p>
+  </article>
+{{/page.html.hbs}}

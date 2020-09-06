@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -o errexit
+set -o pipefail
+set -o nounset
+trap 'echo "$0: line $LINENO: exit status of last command: $?" >&2' ERR
+
+port="${1-80}"
+this_dir=$(cd -P "$(dirname "$0")" && pwd)
+
+# Mount over the baked-in content to allow editing content without rebuilding
+# the image.
+docker run \
+  --tty \
+  --publish="$port":80 \
+  --mount=src="$this_dir"/content,target=/var/www,type=bind \
+  operator-website -vv --index-route=/home

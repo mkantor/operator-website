@@ -1,0 +1,21 @@
+{{#if (eq os "linux")}}
+  <ul class="commands">
+      <li>curl -L https://github.com/mkantor/operator/releases/download/{{version}}/operator-{{os}}.tar.gz \
+  &gt; operator.tar.gz</li>
+      <li>cat operator.tar.gz \
+  | sha256sum -c &lt;(echo "{{hash}}  -") \
+  || rm operator.tar.gz</li>
+    <li>tar -xf operator.tar.gz</li>
+    <li>echo '{{#if true}}Hello, world!{{/if}}' | ./operator eval --content-directory=/dev/null</li>
+  </ul>
+{{else}}{{#if (eq os "macos")}}
+  <ul class="commands">
+    <li>curl -L https://github.com/mkantor/operator/releases/download/{{version}}/operator-{{os}}.tar.gz \
+  &gt; operator.tar.gz</li>
+    <li>cat operator.tar.gz \
+  | shasum -a 256 -c &lt;(echo "{{hash}}  -") \
+  || rm operator.tar.gz</li>
+    <li>tar -xf operator.tar.gz</li>
+    <li>echo '{{#if true}}Hello, world!{{/if}}' | ./operator eval --content-directory=/dev/null</li>
+  </ul>
+{{/if}}{{/if}}

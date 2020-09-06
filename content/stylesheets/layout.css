@@ -1,0 +1,154 @@
+/*
+This file contains spacing, positioning/alignment, sizes, and related
+properties which affect the overall layout.
+*/
+
+html {
+  --smaller-space: 8px;
+  --standard-space: 20px;
+  --bigger-space: 60px;
+  --biggest-space: 100px;
+  --code-font-size: 0.72rem;
+
+  font-size: 1.25em;
+}
+
+body {
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: var(--bigger-space);
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+ul,
+div,
+article,
+figure,
+header,
+footer,
+.group {
+  margin-top: var(--standard-space);
+  margin-bottom: var(--standard-space);
+}
+.group h1,
+.group h2,
+.group h3,
+.group h4,
+.group h5,
+.group h6,
+.group p,
+.group pre,
+.group ul,
+.group div,
+.group article,
+.group figure,
+.group header,
+.group footer,
+.group .group {
+  /* .group makes its contents a little more snug */
+  margin-top: var(--smaller-space);
+  margin-bottom: var(--smaller-space);
+}
+
+header h1 {
+  margin: 0.1em auto;
+  font-size: 3.2em;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 0;
+}
+header nav ul li {
+  display: inline-block;
+  margin: 0 0.8em;
+}
+
+article {
+  margin-top: var(--biggest-space);
+  margin-bottom: var(--biggest-space);
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+h5,
+h6 {
+  font-size: 1em;
+}
+
+figure {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+figure img {
+  display: block;
+  width: 100%;
+}
+
+pre,
+ul.commands {
+  padding: 0.3em 0.5em;
+  font-size: var(--code-font-size);
+  overflow-x: auto;
+}
+code {
+  font-size: var(--code-font-size);
+}
+ul.commands {
+  padding-left: 1.8em;
+  list-style: none;
+  text-indent: -2ch; /* width of the list marker */
+}
+ul.commands li {
+  white-space: pre;
+  margin: 0.1em 0;
+}
+ul.commands li:before {
+  content: "$ "; /* the list marker. */
+}
+
+img.inline {
+  height: 1em;
+  vertical-align: middle;
+}
+
+details {
+  margin-top: var(--standard-space);
+  margin-bottom: var(--standard-space);
+}
+details summary {
+  padding-left: 0.3em;
+}
+details .commands {
+  margin-top: var(--smaller-space);
+  margin-bottom: var(--smaller-space);
+}
+
+footer:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 1em;
+  }
+  body {
+    padding: var(--standard-space);
+  }
+  article {
+    margin-top: var(--bigger-space);
+    margin-bottom: var(--bigger-space);
+  }
+}

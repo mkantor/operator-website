@@ -1,0 +1,139 @@
+{{#> page.html.hbs}}
+  {{get "/header"}}
+
+  <article>
+    <p>The CLI has three subcommands:</p>
+    <ol>
+      <li><code>eval</code> evaluates a handlebars template from STDIN.</li>
+      <li><code>get</code> renders content from a content directory.</li>
+      <li><code>serve</code> starts an HTTP server.</li>
+    </ol>
+    <p>
+      <code>serve</code> is where the real action is, but the other two come in
+      handy at times.
+    </p>
+    <p>
+      These commands all require a <em>content directory</em>, which is just the
+      folder where your website lives. There are a bunch of sample content
+      directories
+      <a href="https://github.com/mkantor/operator/blob/master/samples"
+        >in the repository</a
+      >.
+    </p>
+    <p>
+      To learn more, run <code>operator --help</code> or
+      <code>operator &lt;SUBCOMMAND&gt; --help</code>.
+    </p>
+  </article>
+  <article>
+    <h2>Quick Start</h2>
+    <div class="group">
+      <p>Let's run this website:</p>
+      <ul class="commands">
+        <li>git clone https://github.com/mkantor/operator-website.git</li>
+        <li>operator -vv serve \
+  --content-directory=operator-website/content \
+  --index-route=/home \
+  --bind-to=127.0.0.1:8080</li>
+      </ul>
+      <p>
+        Then open <a href="http://localhost:8080">http://localhost:8080</a> in
+        your browser of choice.
+      </p>
+    </div>
+    <p>
+      Try making a change to the site (in <code>operator-website/content</code>)
+      and restart the server to see the update.
+    </p>
+  </article>
+  <article>
+    <h2>Content</h2>
+    <p>
+      When Operator starts up it crawls through your content directory to build
+      a representation of your website. The site's routes and configuration are
+      derived from this directory.
+    </p>
+    <p>
+      Operator needs to know what
+      <a href="https://tools.ietf.org/html/rfc6838">media type</a> will be
+      emitted by each content file. This is specified via file extensions (<code
+        >.html</code
+      >
+      is <code>text/html</code>, <code>.js</code> is
+      <code>text/javascript</code>, <code>.png</code> is <code>image/png</code>,
+      and <a href="https://crates.io/crates/mime_guess">so on</a>).
+    </p>
+    <p>There are three different kinds of content files:</p>
+    <ol>
+      <li>
+        <p>
+          <strong>Static files</strong> are served directly. For example, you
+          can drop a photo into your content directory and it'll be served as
+          is.
+        </p>
+        <p>
+          Static files only have one extension (<code>about.html</code>,
+          <code>kittens.mp4</code>, etc).
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Executables</strong> are executed at request time, with
+          standard output piped out as the response body. Any program that your
+          operating system can run will work (think scripting languages,
+          compiled binaries, etc). The executable is invoked with no CLI
+          arguments, no special environment variables, and with its working
+          directory set to its own parent folder.
+        </p>
+        <p>
+          Executables have two extensions, with the first one indicating the
+          media type of the executable's output (<code>contact.html.py</code>,
+          <code>styles.css.sh</code>, <code>dankmeme.jpg.exe</code>, etc).
+          Operator actually does not care what the second extension is, but you
+          can use it to indicate the file type (so
+          <code>contact.html.py</code> would be a Python script that outputs
+          HTML—for executables the <em>file type</em> is usually not the same as
+          its <em>output type</em>, although if you're feeling feisty then
+          things like <code>wat.js.js</code> are certainly possible). Operator
+          requires execute permissions on these files, and scripts will
+          typically need a
+          <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a>
+          so your OS knows how to interpret them.
+        </p>
+
+        <aside>
+          <strong>🚨 Security warning:</strong> Be mindful of what your
+          executables can do! For example, an executable that could
+          <code>rm -rf /</code>, leak sensitive information, or fork bomb your
+          system would be a bad idea.
+        </aside>
+      </li>
+      <li>
+        <p>
+          <strong>Handlebars templates</strong> are compiled during server
+          startup and rendered at request time. The heavy lifting is done by
+          <a href="https://crates.io/crates/handlebars"
+            >the <code>handlebars</code> Rust library</a
+          >
+          which is largely compatible with
+          <a href="https://handlebarsjs.com"
+            >the original JavaScript implementation</a
+          >. Operator provides some render data and a custom
+          <code>get</code> helper to make your content composable.
+        </p>
+        <p>
+          Handlebars templates also have two extensions. The first one still
+          indicates the media type, but the second one must be
+          <code>.hbs</code> (<code>faq.html.hbs</code>,
+          <code>metadata.json.hbs</code>, etc).
+        </p>
+      </li>
+    </ol>
+    <p>
+      Hidden files and directories (whose name begin with <code>.</code>) are
+      always completely ignored by Operator.
+    </p>
+  </article>
+
+  {{get "/footer"}}
+{{/page.html.hbs}}

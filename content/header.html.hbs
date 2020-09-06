@@ -1,0 +1,22 @@
+<header>
+  <h1><a href="home">Operator</a></h1>
+  <nav>
+    <ul>
+      <li>
+        <a
+          href="/features"
+          {{#if (eq request-route "/features")}}class="current"{{/if}}
+          >Features</a
+        >
+      </li>
+      <li>
+        <a
+          href="/usage"
+          {{#if (eq request-route "/usage")}}class="current"{{/if}}
+          >Usage</a
+        >
+      </li>
+      <li><a href="https://github.com/mkantor/operator">Source</a></li>
+    </ul>
+  </nav>
+</header>
