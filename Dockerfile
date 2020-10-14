@@ -21,6 +21,16 @@ RUN \
 
 RUN tar -xf operator.tar.gz && rm operator.tar.gz
 
+# Allow Operator to bind to port 80 even if it's not run by root.
+RUN \
+  apt-get update \
+    && apt-get -y install libcap2-bin \
+    && setcap 'cap_net_bind_service=+ep' ./operator \
+    && apt-get -y purge libcap2-bin \
+    && apt-get -y autoremove \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install languages needed for executables.
 RUN \
   apt-get update \
@@ -29,7 +39,11 @@ RUN \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./content /var/www
+RUN groupadd --system www && useradd --no-log-init --system --gid www www
+
+USER www
+
+COPY --chown=www:www ./content /var/www
 
 EXPOSE 80
 
