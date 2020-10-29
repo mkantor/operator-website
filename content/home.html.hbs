@@ -1,7 +1,7 @@
-{{#> page.html.hbs}}
+{{#> _page.html.hbs}}
   <script defer src="/install-chooser.js"></script>
 
-  {{get "/header"}}
+  {{get "/_header"}}
 
   <article>
     <p>
@@ -40,7 +40,7 @@
     <div class="install-instructions">
       <details>
         <summary>Linux</summary>
-        {{>install-commands.html.hbs
+        {{>_install-commands.html.hbs
           os="linux"
           version="0.0.3"
           hash="04c95cfd90252ed993edf2bce04de54ef249d55b489239576b2415d64b9f6401"
@@ -49,7 +49,7 @@
 
       <details>
         <summary>macOS</summary>
-        {{>install-commands.html.hbs
+        {{>_install-commands.html.hbs
           os="macos"
           version="0.0.3"
           hash="224685dacf8eb02ab0e8065b0e981bea3148f6479b3113160bfc0740e094d9d5"
@@ -58,5 +58,5 @@
     </div>
   </article>
 
-  {{get "/footer"}}
-{{/page.html.hbs}}
+  {{get "/_footer"}}
+{{/_page.html.hbs}}
