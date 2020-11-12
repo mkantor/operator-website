@@ -13,4 +13,4 @@ docker run \
   --tty \
   --publish="$port":80 \
   --mount=src="$this_dir"/content,target=/var/www,type=bind \
-  operator-website -vv --index-route=/home
+  operator-website -vv --error-handler-route=/error-handler --index-route=/home
