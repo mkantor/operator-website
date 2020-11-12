@@ -1,0 +1,49 @@
+{{#> _page.html.hbs}}
+  {{get "/_header"}}
+
+  {{#if (eq error-code 400)}}{{#*inline "error-message"}}Bad Request{{/inline}}{{/if}}
+  {{#if (eq error-code 401)}}{{#*inline "error-message"}}Unauthorized{{/inline}}{{/if}}
+  {{#if (eq error-code 402)}}{{#*inline "error-message"}}Payment Required{{/inline}}{{/if}}
+  {{#if (eq error-code 403)}}{{#*inline "error-message"}}Forbidden{{/inline}}{{/if}}
+  {{#if (eq error-code 404)}}{{#*inline "error-message"}}Not Found{{/inline}}{{/if}}
+  {{#if (eq error-code 405)}}{{#*inline "error-message"}}Method Not Allowed{{/inline}}{{/if}}
+  {{#if (eq error-code 406)}}{{#*inline "error-message"}}Not Acceptable{{/inline}}{{/if}}
+  {{#if (eq error-code 407)}}{{#*inline "error-message"}}Proxy Authentication Required{{/inline}}{{/if}}
+  {{#if (eq error-code 408)}}{{#*inline "error-message"}}Request Timeout{{/inline}}{{/if}}
+  {{#if (eq error-code 409)}}{{#*inline "error-message"}}Conflict{{/inline}}{{/if}}
+  {{#if (eq error-code 410)}}{{#*inline "error-message"}}Gone{{/inline}}{{/if}}
+  {{#if (eq error-code 411)}}{{#*inline "error-message"}}Length Required{{/inline}}{{/if}}
+  {{#if (eq error-code 412)}}{{#*inline "error-message"}}Precondition Failed{{/inline}}{{/if}}
+  {{#if (eq error-code 413)}}{{#*inline "error-message"}}Payload Too Large{{/inline}}{{/if}}
+  {{#if (eq error-code 414)}}{{#*inline "error-message"}}URI Too Long{{/inline}}{{/if}}
+  {{#if (eq error-code 415)}}{{#*inline "error-message"}}Unsupported Media Type{{/inline}}{{/if}}
+  {{#if (eq error-code 416)}}{{#*inline "error-message"}}Range Not Satisfiable{{/inline}}{{/if}}
+  {{#if (eq error-code 417)}}{{#*inline "error-message"}}Expectation Failed{{/inline}}{{/if}}
+  {{#if (eq error-code 418)}}{{#*inline "error-message"}}I'm A Teapot{{/inline}}{{/if}}
+  {{#if (eq error-code 421)}}{{#*inline "error-message"}}Misdirected Request{{/inline}}{{/if}}
+  {{#if (eq error-code 422)}}{{#*inline "error-message"}}Unprocessable Entity{{/inline}}{{/if}}
+  {{#if (eq error-code 423)}}{{#*inline "error-message"}}Locked{{/inline}}{{/if}}
+  {{#if (eq error-code 424)}}{{#*inline "error-message"}}Failed Dependency{{/inline}}{{/if}}
+  {{#if (eq error-code 426)}}{{#*inline "error-message"}}Upgrade Required{{/inline}}{{/if}}
+  {{#if (eq error-code 428)}}{{#*inline "error-message"}}Precondition Required{{/inline}}{{/if}}
+  {{#if (eq error-code 429)}}{{#*inline "error-message"}}Too Many Requests{{/inline}}{{/if}}
+  {{#if (eq error-code 431)}}{{#*inline "error-message"}}Request Header Fields Too Large{{/inline}}{{/if}}
+  {{#if (eq error-code 451)}}{{#*inline "error-message"}}Unavailable For Legal Reasons{{/inline}}{{/if}}
+  {{#if (eq error-code 500)}}{{#*inline "error-message"}}Internal Server Error{{/inline}}{{/if}}
+  {{#if (eq error-code 501)}}{{#*inline "error-message"}}Not Implemented{{/inline}}{{/if}}
+  {{#if (eq error-code 502)}}{{#*inline "error-message"}}Bad Gateway{{/inline}}{{/if}}
+  {{#if (eq error-code 503)}}{{#*inline "error-message"}}Service Unavailable{{/inline}}{{/if}}
+  {{#if (eq error-code 504)}}{{#*inline "error-message"}}Gateway Timeout{{/inline}}{{/if}}
+  {{#if (eq error-code 505)}}{{#*inline "error-message"}}HTTP Version Not Supported{{/inline}}{{/if}}
+  {{#if (eq error-code 506)}}{{#*inline "error-message"}}Variant Also Negotiates{{/inline}}{{/if}}
+  {{#if (eq error-code 507)}}{{#*inline "error-message"}}Insufficient Storage{{/inline}}{{/if}}
+  {{#if (eq error-code 508)}}{{#*inline "error-message"}}Loop Detected{{/inline}}{{/if}}
+  {{#if (eq error-code 510)}}{{#*inline "error-message"}}Not Extended{{/inline}}{{/if}}
+  {{#if (eq error-code 511)}}{{#*inline "error-message"}}Network Authentication Required{{/inline}}{{/if}}
+
+  <article>
+    <h1>
+      Error: {{error-code}} {{#> error-message}}Unknown{{/error-message}}
+    </h1>
+  </article>
+{{/_page.html.hbs}}
