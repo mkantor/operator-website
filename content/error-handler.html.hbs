@@ -1,49 +1,158 @@
+{{~#if (eq error-code 400)}}
+  {{~#*inline "error-reason"}}Bad Request{{/inline~}}
+  {{~#*inline "error-details"}}Your browser sent a request that this server could not understand.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 401)}}
+  {{~#*inline "error-reason"}}Unauthorized{{/inline~}}
+  {{~#*inline "error-details"}}This server could not verify that you are authorized to access the requested resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 402)}}
+  {{~#*inline "error-reason"}}Payment Required{{/inline~}}
+  {{~#*inline "error-details"}}The server encountered an internal error or misconfiguration and was unable to complete your request.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 403)}}
+  {{~#*inline "error-reason"}}Forbidden{{/inline~}}
+  {{~#*inline "error-details"}}You don't have permission to access the requested resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 404)}}
+  {{~#*inline "error-reason"}}Not Found{{/inline~}}
+  {{~#*inline "error-details"}}Unable to find the requested resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 405)}}
+  {{~#*inline "error-reason"}}Method Not Allowed{{/inline~}}
+  {{~#*inline "error-details"}}The requested method is not allowed for the URL.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 406)}}
+  {{~#*inline "error-reason"}}Not Acceptable{{/inline~}}
+  {{~#*inline "error-details"}}An appropriate representation of the requested resource could not be found on this server.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 407)}}
+  {{~#*inline "error-reason"}}Proxy Authentication Required{{/inline~}}
+  {{~#*inline "error-details"}}You are not authorized to access the requested resource; you must first authenticate with the proxy.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 408)}}
+  {{~#*inline "error-reason"}}Request Timeout{{/inline~}}
+  {{~#*inline "error-details"}}Server timeout waiting for the HTTP request from the client.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 409)}}
+  {{~#*inline "error-reason"}}Conflict{{/inline~}}
+  {{~#*inline "error-details"}}Request could not be completed due to a conflict with the current state of the requested resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 410)}}
+  {{~#*inline "error-reason"}}Gone{{/inline~}}
+  {{~#*inline "error-details"}}The requested resource is no longer available on this server and there is no forwarding address. Please remove all references to this resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 411)}}
+  {{~#*inline "error-reason"}}Length Required{{/inline~}}
+  {{~#*inline "error-details"}}Unable to accept the request without a valid Content-Length.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 412)}}
+  {{~#*inline "error-reason"}}Precondition Failed{{/inline~}}
+  {{~#*inline "error-details"}}The precondition on the request evaluated to false.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 413)}}
+  {{~#*inline "error-reason"}}Payload Too Large{{/inline~}}
+  {{~#*inline "error-details"}}The amount of data provided in the request exceeds the capacity limit for this server.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 414)}}
+  {{~#*inline "error-reason"}}URI Too Long{{/inline~}}
+  {{~#*inline "error-details"}}The request URL length exceeds the capacity limit for this server.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 415)}}
+  {{~#*inline "error-reason"}}Unsupported Media Type{{/inline~}}
+  {{~#*inline "error-details"}}The supplied request data is not in a format acceptable for processing by this resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 416)}}
+  {{~#*inline "error-reason"}}Range Not Satisfiable{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 417)}}
+  {{~#*inline "error-reason"}}Expectation Failed{{/inline~}}
+  {{~#*inline "error-details"}}The expectation given in the Expect request-header field could not be met by this server.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 418)}}
+  {{~#*inline "error-reason"}}I'm A Teapot{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 421)}}
+  {{~#*inline "error-reason"}}Misdirected Request{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 422)}}
+  {{~#*inline "error-reason"}}Unprocessable Entity{{/inline~}}
+  {{~#*inline "error-details"}}The server understands the media type of the request entity, but was unable to process the contained instructions.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 423)}}
+  {{~#*inline "error-reason"}}Locked{{/inline~}}
+  {{~#*inline "error-details"}}The requested resource is currently locked. The lock must be released or proper identification given before the method can be applied.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 424)}}
+  {{~#*inline "error-reason"}}Failed Dependency{{/inline~}}
+  {{~#*inline "error-details"}}The method could not be performed on the resource because the requested action depended on another action and that other action failed.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 426)}}
+  {{~#*inline "error-reason"}}Upgrade Required{{/inline~}}
+  {{~#*inline "error-details"}}The requested resource can only be retrieved using SSL. Either upgrade your client, or try requesting the page using "https://".{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 428)}}
+  {{~#*inline "error-reason"}}Precondition Required{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 429)}}
+  {{~#*inline "error-reason"}}Too Many Requests{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 431)}}
+  {{~#*inline "error-reason"}}Request Header Fields Too Large{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 451)}}
+  {{~#*inline "error-reason"}}Unavailable For Legal Reasons{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 500)}}
+  {{~#*inline "error-reason"}}Internal Server Error{{/inline~}}
+  {{~#*inline "error-details"}}The server encountered an internal error or misconfiguration and was unable to complete your request.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 501)}}
+  {{~#*inline "error-reason"}}Not Implemented{{/inline~}}
+  {{~#*inline "error-details"}}This server does not support the functionality required to fulfill the request.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 502)}}
+  {{~#*inline "error-reason"}}Bad Gateway{{/inline~}}
+  {{~#*inline "error-details"}}The proxy server received an invalid response from an upstream server.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 503)}}
+  {{~#*inline "error-reason"}}Service Unavailable{{/inline~}}
+  {{~#*inline "error-details"}}The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 504)}}
+  {{~#*inline "error-reason"}}Gateway Timeout{{/inline~}}
+  {{~#*inline "error-details"}}The proxy server did not receive a timely response from the upstream server.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 505)}}
+  {{~#*inline "error-reason"}}HTTP Version Not Supported{{/inline~}}
+  {{~#*inline "error-details"}}The server encountered an internal error or misconfiguration and was unable to complete your request.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 506)}}
+  {{~#*inline "error-reason"}}Variant Also Negotiates{{/inline~}}
+  {{~#*inline "error-details"}}A variant for the requested resource is itself a negotiable resource. This indicates a configuration error.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 507)}}
+  {{~#*inline "error-reason"}}Insufficient Storage{{/inline~}}
+  {{~#*inline "error-details"}}The method could not be performed. There is insufficient free space left in your storage allocation.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 508)}}
+  {{~#*inline "error-reason"}}Loop Detected{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 510)}}
+  {{~#*inline "error-reason"}}Not Extended{{/inline~}}
+  {{~#*inline "error-details"}}A mandatory extension policy in the request is not accepted by the server for this resource.{{/inline~}}
+{{/if~}}
+{{~#if (eq error-code 511)}}
+  {{~#*inline "error-reason"}}Network Authentication Required{{/inline~}}
+{{/if~}}
+
 {{#> _page.html.hbs}}
   {{get "/_header"}}
 
-  {{#if (eq error-code 400)}}{{#*inline "error-message"}}Bad Request{{/inline}}{{/if}}
-  {{#if (eq error-code 401)}}{{#*inline "error-message"}}Unauthorized{{/inline}}{{/if}}
-  {{#if (eq error-code 402)}}{{#*inline "error-message"}}Payment Required{{/inline}}{{/if}}
-  {{#if (eq error-code 403)}}{{#*inline "error-message"}}Forbidden{{/inline}}{{/if}}
-  {{#if (eq error-code 404)}}{{#*inline "error-message"}}Not Found{{/inline}}{{/if}}
-  {{#if (eq error-code 405)}}{{#*inline "error-message"}}Method Not Allowed{{/inline}}{{/if}}
-  {{#if (eq error-code 406)}}{{#*inline "error-message"}}Not Acceptable{{/inline}}{{/if}}
-  {{#if (eq error-code 407)}}{{#*inline "error-message"}}Proxy Authentication Required{{/inline}}{{/if}}
-  {{#if (eq error-code 408)}}{{#*inline "error-message"}}Request Timeout{{/inline}}{{/if}}
-  {{#if (eq error-code 409)}}{{#*inline "error-message"}}Conflict{{/inline}}{{/if}}
-  {{#if (eq error-code 410)}}{{#*inline "error-message"}}Gone{{/inline}}{{/if}}
-  {{#if (eq error-code 411)}}{{#*inline "error-message"}}Length Required{{/inline}}{{/if}}
-  {{#if (eq error-code 412)}}{{#*inline "error-message"}}Precondition Failed{{/inline}}{{/if}}
-  {{#if (eq error-code 413)}}{{#*inline "error-message"}}Payload Too Large{{/inline}}{{/if}}
-  {{#if (eq error-code 414)}}{{#*inline "error-message"}}URI Too Long{{/inline}}{{/if}}
-  {{#if (eq error-code 415)}}{{#*inline "error-message"}}Unsupported Media Type{{/inline}}{{/if}}
-  {{#if (eq error-code 416)}}{{#*inline "error-message"}}Range Not Satisfiable{{/inline}}{{/if}}
-  {{#if (eq error-code 417)}}{{#*inline "error-message"}}Expectation Failed{{/inline}}{{/if}}
-  {{#if (eq error-code 418)}}{{#*inline "error-message"}}I'm A Teapot{{/inline}}{{/if}}
-  {{#if (eq error-code 421)}}{{#*inline "error-message"}}Misdirected Request{{/inline}}{{/if}}
-  {{#if (eq error-code 422)}}{{#*inline "error-message"}}Unprocessable Entity{{/inline}}{{/if}}
-  {{#if (eq error-code 423)}}{{#*inline "error-message"}}Locked{{/inline}}{{/if}}
-  {{#if (eq error-code 424)}}{{#*inline "error-message"}}Failed Dependency{{/inline}}{{/if}}
-  {{#if (eq error-code 426)}}{{#*inline "error-message"}}Upgrade Required{{/inline}}{{/if}}
-  {{#if (eq error-code 428)}}{{#*inline "error-message"}}Precondition Required{{/inline}}{{/if}}
-  {{#if (eq error-code 429)}}{{#*inline "error-message"}}Too Many Requests{{/inline}}{{/if}}
-  {{#if (eq error-code 431)}}{{#*inline "error-message"}}Request Header Fields Too Large{{/inline}}{{/if}}
-  {{#if (eq error-code 451)}}{{#*inline "error-message"}}Unavailable For Legal Reasons{{/inline}}{{/if}}
-  {{#if (eq error-code 500)}}{{#*inline "error-message"}}Internal Server Error{{/inline}}{{/if}}
-  {{#if (eq error-code 501)}}{{#*inline "error-message"}}Not Implemented{{/inline}}{{/if}}
-  {{#if (eq error-code 502)}}{{#*inline "error-message"}}Bad Gateway{{/inline}}{{/if}}
-  {{#if (eq error-code 503)}}{{#*inline "error-message"}}Service Unavailable{{/inline}}{{/if}}
-  {{#if (eq error-code 504)}}{{#*inline "error-message"}}Gateway Timeout{{/inline}}{{/if}}
-  {{#if (eq error-code 505)}}{{#*inline "error-message"}}HTTP Version Not Supported{{/inline}}{{/if}}
-  {{#if (eq error-code 506)}}{{#*inline "error-message"}}Variant Also Negotiates{{/inline}}{{/if}}
-  {{#if (eq error-code 507)}}{{#*inline "error-message"}}Insufficient Storage{{/inline}}{{/if}}
-  {{#if (eq error-code 508)}}{{#*inline "error-message"}}Loop Detected{{/inline}}{{/if}}
-  {{#if (eq error-code 510)}}{{#*inline "error-message"}}Not Extended{{/inline}}{{/if}}
-  {{#if (eq error-code 511)}}{{#*inline "error-message"}}Network Authentication Required{{/inline}}{{/if}}
-
   <article>
-    <h1>
-      Error: {{error-code}} {{#> error-message}}Unknown{{/error-message}}
-    </h1>
+    <h2>
+      Error: {{error-code}} {{#>error-reason}}Unknown{{/error-reason}}
+    </h2>
+    <p class="error">{{>error-details}}</p>
   </article>
 {{/_page.html.hbs}}

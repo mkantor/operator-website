@@ -97,6 +97,10 @@ figure img {
   width: 100%;
 }
 
+p.error {
+  text-align: center;
+}
+
 pre,
 ul.commands {
   padding: 0.3em 0.5em;
