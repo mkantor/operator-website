@@ -89,22 +89,22 @@
         href="https://github.com/mkantor/operator-website/blob/master/content/examples/negotiation/image.webp"
         ><code>image.webp</code></a
       >, the server will be able to satisfy
-      <a href="examples/negotiation/image"><code>GET /image</code></a> as either
+      <a href="/examples/negotiation/image"><code>GET /image</code></a> as either
       <code>image/png</code> or <code>image/webp</code>. "Negotiation" means
       that Operator uses the representation which best fits the client's
       preferences. For example, your browser prefers
       <img
         class="inline"
-        src="examples/negotiation/image"
+        src="/examples/negotiation/image"
         alt="Image in PNG or WebP format, depending on your browser."
       />.
     </p>
     <p>
       Request URLs with file extensions override the <code>Accept</code> header.
       For example, you can
-      <a href="examples/negotiation/image.png"><code>GET /image.png</code></a>
+      <a href="/examples/negotiation/image.png"><code>GET /image.png</code></a>
       or
-      <a href="examples/negotiation/image.webp"><code>GET /image.webp</code></a>
+      <a href="/examples/negotiation/image.webp"><code>GET /image.webp</code></a>
       to retrieve a specific type no matter which your browser prefers.
     </p>
   </article>
