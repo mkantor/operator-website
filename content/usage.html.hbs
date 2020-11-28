@@ -25,6 +25,7 @@
       <code>operator &lt;SUBCOMMAND&gt; --help</code>.
     </p>
   </article>
+
   <article>
     <h2>Quick Start</h2>
     <div class="group">
@@ -47,6 +48,7 @@
       and restart the server to see the update.
     </p>
   </article>
+
   <article>
     <h2>Content</h2>
     <p>
@@ -101,13 +103,6 @@
           <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a>
           so your OS knows how to interpret them.
         </p>
-
-        <aside>
-          <strong>🚨 Security warning:</strong> Be mindful of what your
-          executables can do! For example, an executable that could
-          <code>rm -rf /</code>, leak sensitive information, or fork bomb your
-          system would be a bad idea.
-        </aside>
       </li>
       <li>
         <p>
@@ -134,6 +129,31 @@
       Hidden files and directories (whose name begin with <code>.</code>) are
       always completely ignored by Operator.
     </p>
+  </article>
+
+  <article>
+    <h2>Security</h2>
+    <p>
+      Operator is only as secure as your content directory, so be careful. Here
+      are some best practices:
+    </p>
+    <ul>
+      <li>
+        Always create a dedicated user with limited privileges to run the server
+        and/or run it inside a locked-down container or chroot jail.
+      </li>
+      <li>
+        Make sure that nobody except you has write permissions on the content
+        directory and everything in it (and, again, don't run Operator as
+        yourself in production).
+      </li>
+      <li>
+        Any executables you put in the content directory must be trustworthy,
+        and you should think carefully about what effects they can have. An
+        executable that could <code>rm -rf /</code>, leak sensitive information,
+        or fork bomb your system would be a bad idea.
+      </li>
+    </ul>
   </article>
 
   {{get "/_footer"}}
