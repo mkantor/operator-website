@@ -1,17 +1,16 @@
-version: '3.8'
+version: "3.8"
 
 services:
-
   https-portal:
     image: steveltn/https-portal:1
     ports:
-      - '80:80'
-      - '443:443'
+      - 80:80
+      - 443:443
     links:
       - website
     environment:
-      DOMAINS: 'operator.mattkantor.com -> http://website:80'
-      STAGE: 'production'
+      DOMAINS: operator.mattkantor.com -> http://website:80
+      STAGE: production
       CUSTOM_NGINX_SERVER_CONFIG_BLOCK: proxy_buffering off; # For the streaming example.
 
   website:
