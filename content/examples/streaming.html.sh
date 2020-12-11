@@ -10,9 +10,11 @@ echo "<!doctype html>
 <body>"
 
 # Please don't actually do this—it's just a silly demo.
-for hue in $(seq 0 360)
+hue=0
+while [ "$hue" -le 360 ]
 do
   color="hsl(${hue}deg, 50%, 50%)"
   echo "<style>html { background-color: $color; } body:after { content: \"$color\"; }</style>"
   sleep 0.05
+  hue=$((hue + 1))
 done
