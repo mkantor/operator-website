@@ -116,17 +116,17 @@
       It doesn't wait for the entire response to be generated.
     </p>
     <div class="group">
-      <p>For example, with this executable:</p>
-      <pre><span class="comment">#!/bin/sh</span>
-echo '&lt;!doctype html&gt;&lt;meta charset="utf-8"&gt;'
-for n in $(seq 0 100)
-do
-  sleep 0.03
-  printf '%s' '█'
-done</pre>
       <p>
-        The block characters are pushed to the client
-        <a href="/examples/slow">one at a time</a>.
+        For example, with
+        <a
+          href="https://github.com/mkantor/operator-website/blob/master/content/examples/streaming.html.sh"
+        >
+          a script that gradually emits its response body</a
+        >
+        the client can begin processing the response while the script is still
+        running. In this case the <code>&lt;style&gt;</code> elements are
+        applied one at a time, creating
+        <a href="/examples/streaming">a colorful effect</a>.
       </p>
     </div>
   </article>
