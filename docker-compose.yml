@@ -1,5 +1,8 @@
 version: "3.8"
 
+volumes:
+  ssl-certificates:
+
 services:
   https-portal:
     image: steveltn/https-portal:1
@@ -8,6 +11,8 @@ services:
       - 443:443
     links:
       - website
+    volumes:
+      - ssl-certificates:/var/lib/https-portal
     environment:
       DOMAINS: operator.mattkantor.com -> http://website:80
       STAGE: production
