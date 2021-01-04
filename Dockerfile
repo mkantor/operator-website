@@ -17,9 +17,9 @@ RUN \
     && apt-get -y purge curl \
     && apt-get -y autoremove \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN tar -xf operator.tar.gz && rm operator.tar.gz
+    && rm -rf /var/lib/apt/lists/* \
+    && tar -xf operator.tar.gz \
+    && rm operator.tar.gz
 
 # Allow Operator to bind to port 80 even if it's not run by root.
 RUN \
