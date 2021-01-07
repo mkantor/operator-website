@@ -113,3 +113,7 @@ code {
 a:hover code {
   border-color: var(--selected);
 }
+
+small {
+  color: var(--content-faded);
+}
