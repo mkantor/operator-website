@@ -1,6 +1,6 @@
 {{#if (eq os "linux")}}
   <ul class="commands">
-      <li>curl -L https://github.com/mkantor/operator/releases/download/{{version}}/operator-{{os}}.tar.gz \
+      <li>curl -L https://github.com/mkantor/operator/releases/download/{{version}}/operator-{{os}}-x86-64.tar.gz \
   &gt; operator.tar.gz</li>
       <li>cat operator.tar.gz \
   | sha256sum -c &lt;(echo "{{hash}}  -") \
@@ -10,7 +10,7 @@
   </ul>
 {{else}}{{#if (eq os "macos")}}
   <ul class="commands">
-    <li>curl -L https://github.com/mkantor/operator/releases/download/{{version}}/operator-{{os}}.tar.gz \
+    <li>curl -L https://github.com/mkantor/operator/releases/download/{{version}}/operator-{{os}}-x86-64.tar.gz \
   &gt; operator.tar.gz</li>
     <li>cat operator.tar.gz \
   | shasum -a 256 -c &lt;(echo "{{hash}}  -") \

@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
-ARG operator_version=0.1.1
-ARG operator_hash=0bddea8f99f803ffba866fd7bff1f76b3260ccb77e9bcf7f72228c1a9361d14c
+ARG operator_version=0.1.2
+ARG operator_hash=6f1fe37a11e28f55c2c7ccc9844c9b6c692e9cb33ff73a3c938ed57f706d8ba1
 
 SHELL ["/bin/bash", "-c"]
 
@@ -11,7 +11,7 @@ WORKDIR /opt
 RUN \
   apt-get update \
     && apt-get -y install curl \
-    && curl --location --silent https://github.com/mkantor/operator/releases/download/${operator_version}/operator-linux.tar.gz \
+    && curl --location --silent https://github.com/mkantor/operator/releases/download/${operator_version}/operator-linux-x86-64.tar.gz \
       | tee operator.tar.gz \
       | sha256sum --check <(echo "${operator_hash}  -") \
     && apt-get -y purge curl \
