@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  max-width: 75ch;
+  max-width: 65ch;
   margin: 0 auto;
   padding: var(--bigger-space);
   line-height: 1.4;
