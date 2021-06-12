@@ -1,0 +1,16 @@
+<h2>Streaming</h2>
+
+<p>
+  Operator sends chunks of the response body as soon as possible. It doesn't wait for the entire response to be
+  generated.
+</p>
+
+<p>
+  For example, with
+  <a href="https://github.com/mkantor/operator-website/blob/master/content/examples/streaming.html.sh">
+    a script that gradually emits its response body</a
+  >
+  the client can begin processing the response while the script is still running. In this case the
+  <code>&lt;style&gt;</code> elements are applied one at a time, creating
+  <a href="/examples/streaming">a colorful effect</a>.
+</p>

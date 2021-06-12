@@ -1,0 +1,23 @@
+<h2>Run Executables</h2>
+
+<p>
+  Executables in the content directory are run at request time, with standard output piped out as the response body.
+</p>
+
+<div class="group">
+  <p>
+    Any program that you can run from the command line will work (scripts, compiled binaries, etc). For example, this
+    timestamp is the output of a shell script:
+  </p>
+  <pre><a href="https://github.com/mkantor/operator-website/blob/master/content/examples/now.html.sh">now.html.sh</a>: {{get "/examples/now"}}</pre>
+</div>
+
+<div class="group">
+  <p>
+    Since executables are run as normal programs by your operating system you can freely mix and match whatever
+    languages you like:
+  </p>
+  <pre><a href="https://github.com/mkantor/operator-website/blob/master/content/examples/polyglot/foo.html.js">foo.html.js</a>: {{get "/examples/polyglot/foo"}}</pre>
+  <pre><a href="https://github.com/mkantor/operator-website/blob/master/content/examples/polyglot/bar.html.py">bar.html.py</a>: {{get "/examples/polyglot/bar"}}</pre>
+  <pre><a href="https://github.com/mkantor/operator-website/blob/master/content/examples/polyglot/baz.html.awk">baz.html.awk</a>: {{get "/examples/polyglot/baz"}}</pre>
+</div>
