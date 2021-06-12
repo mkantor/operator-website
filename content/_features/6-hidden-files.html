@@ -1,0 +1,24 @@
+<h2>Hidden Files</h2>
+
+<p>
+  File/directory names which start with <code>_</code> are hidden from routing, but are still accessible by other
+  files in the content directory. This can be useful for partials, scripts, or other things which don't make sense out
+  of context.
+</p>
+
+<p>
+  For example,
+  <a href="https://github.com/mkantor/operator-website/tree/master/content">this site</a>
+  has
+  <a href="https://github.com/mkantor/operator-website/blob/master/content/_header.html.hbs"
+    >a file named <code>_header.html.hbs</code></a
+  >
+  in the root of its content directory, but requests for
+  <code>GET /_header</code> will receive <a href="/_header"><code>404</code> responses</a> instead of the HTML for the
+  page header.
+</p>
+
+<p>
+  Additionally, file/directory names which start with <code>.</code> are always <em>completely ignored</em> by
+  Operator. You can use them for whatever you want.
+</p>
