@@ -101,26 +101,27 @@ p.error {
   text-align: center;
 }
 
-pre,
-ul.commands {
-  padding: 0.3em 0.5em;
-  font-size: var(--code-font-size);
-  overflow-x: auto;
+pre {
+  padding: calc(var(--smaller-space) / 2) var(--smaller-space);
 }
 code {
   font-size: var(--code-font-size);
 }
 ul.commands {
+  font-size: var(--code-font-size);
+  overflow-x: auto;
   padding-left: 1.8em;
   list-style: none;
   text-indent: -2ch; /* width of the list marker */
 }
 ul.commands li {
   white-space: pre;
-  margin: 0.1em 0;
+  margin-top: var(--smaller-space);
+  margin-bottom: var(--smaller-space);
+  line-height: 1.3;
 }
 ul.commands li:before {
-  content: "$ "; /* the list marker. */
+  content: "$ "; /* the list marker */
 }
 
 img.inline {
