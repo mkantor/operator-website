@@ -1,0 +1,15 @@
+<h2>Error Handlers</h2>
+
+<p>You can specify a custom error handler for Operator.</p>
+
+<p>
+  For example, this site uses
+  <a href="https://github.com/mkantor/operator-website/blob/master/content/error-handler.html.hbs"
+    >a custom error handler that presents a friendly message</a
+  >. You can see it in action by visiting <a href="/this/route/does/not/exist">a bogus URL</a>.
+</p>
+
+<p>
+  Error handlers are configured via the <code>--error-handler-route</code> command-line argument. They automatically
+  have an <code>error-code</code> variable in their input.
+</p>

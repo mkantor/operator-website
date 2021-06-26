@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-  // Keep one set of installation instructions open at al times.
+  // Keep one set of installation instructions open at all times.
   document.querySelectorAll(".install-instructions").forEach((items) => {
     items.querySelector("details:first-child").open = true;
 
