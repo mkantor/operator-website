@@ -66,8 +66,15 @@
         <p>
           <strong>Executables</strong> are run at request time, with standard output piped out as the response body. Any
           program that you can run from the command line will work (scripts, compiled programs, etc). The executable is
-          invoked with no CLI arguments, no special environment variables, and with its working directory set to its own
-          parent folder.
+          invoked with no CLI arguments and with its working directory set to its own parent folder.
+        </p>
+        <p>
+          An environment variable named <code>OPERATOR_RENDER_DATA</code> is provided to executables. Its value is
+          <a
+            href="https://docs.rs/operator/{{get "/_current-operator-release/version"}}/operator/content/struct.RenderData.html"
+            >render data</a
+          >
+          encoded as JSON. This is the same data provided to handlebars templates.
         </p>
         <p>
           Executables have two extensions, with the first one indicating the media type of the executable's output
@@ -93,8 +100,13 @@
           heavy lifting is done by
           <a href="https://crates.io/crates/handlebars">the <code>handlebars</code> Rust library</a>
           which is largely compatible with
-          <a href="https://handlebarsjs.com">the original JavaScript implementation</a>. Operator provides some render
-          data and a custom <code>get</code> helper to make your content composable.
+          <a href="https://handlebarsjs.com">the original JavaScript handlebars implementation</a>. Operator provides
+          some
+          <a
+            href="https://docs.rs/operator/{{get "/_current-operator-release/version"}}/operator/content/struct.RenderData.html"
+            >render data</a
+          >
+          and a custom <code>get</code> helper to make your content composable.
         </p>
         <p>
           Like executables, handlebars templates also have two extensions. The first one indicates the media type, and
