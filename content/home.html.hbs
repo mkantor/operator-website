@@ -34,8 +34,8 @@
         <summary>Linux <small>x86-64</small></summary>
         {{>_install-commands.html.hbs
           os="linux"
-          version="0.1.2"
-          hash="6f1fe37a11e28f55c2c7ccc9844c9b6c692e9cb33ff73a3c938ed57f706d8ba1"
+          version=(get "/_current-operator-release/version")
+          hash=(get "/_current-operator-release/hash-linux-x86-64")
         }}
       </details>
 
@@ -43,8 +43,8 @@
         <summary>macOS <small>x86-64</small></summary>
         {{>_install-commands.html.hbs
           os="macos"
-          version="0.1.2"
-          hash="75a813b51a09b8988b09561bb94cb87f21466dd4daadc0f72308f916f4f53746"
+          version=(get "/_current-operator-release/version")
+          hash=(get "/_current-operator-release/hash-macos-x86-64")
         }}
       </details>
     </div>
