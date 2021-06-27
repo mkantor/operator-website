@@ -54,8 +54,8 @@
     <ol>
       <li>
         <p>
-          <strong>Static files</strong> are served directly. For example, you can drop a photo into your content
-          directory and it'll be served as is.
+          <strong>Static files</strong> are served directly. For example, you can drop an image or html file into your
+          content directory and it'll be served as is.
         </p>
         <p>
           Static files only have one extension (<code>about.html</code>,
@@ -71,16 +71,20 @@
         </p>
         <p>
           Executables have two extensions, with the first one indicating the media type of the executable's output
-          (<code>contact.html.py</code>,
-          <code>styles.css.sh</code>, <code>dankmeme.jpg.exe</code>, etc). Operator actually does not care what the
-          second extension is, but you can use it to indicate the file type (so <code>contact.html.py</code> would be a
-          Python script that outputs HTML—for executables the <em>file type</em> is usually not the same as its
-          <em>output type</em>, although if you're feeling feisty then things like
-          <a href="https://github.com/mkantor/operator-website/blob/master/content/examples/wat.js.js">wat.js.js</a>
-          are certainly <a href="/examples/wat">possible</a>). Operator requires execute permissions on these files, and
-          scripts will typically need a
+          (<code>contact.html.py</code>, <code>styles.css.sh</code>, <code>dankmeme.jpg.exe</code>, etc). Operator
+          requires execute permissions on these files, and scripts will typically need a
           <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a>
           so your OS knows how to interpret them.
+        </p>
+        <p>
+          <small
+            >Operator doesn't care what the second extension is for executables, but you can use it to indicate the file
+            type&mdash;for example, <code>contact.html.py</code> would be a Python script which outputs HTML. In
+            executables the <em>file type</em> is usually not the same as its <em>output type</em>, although if you're
+            feeling feisty then things like
+            <a href="https://github.com/mkantor/operator-website/blob/master/content/examples/wat.js.js">wat.js.js</a>
+            are certainly <a href="/examples/wat">possible</a>.</small
+          >
         </p>
       </li>
       <li>
@@ -93,9 +97,9 @@
           data and a custom <code>get</code> helper to make your content composable.
         </p>
         <p>
-          Handlebars templates also have two extensions. The first one still indicates the media type, but the second
-          one must be
-          <code>.hbs</code> (<code>faq.html.hbs</code>, <code>metadata.json.hbs</code>, etc).
+          Like executables, handlebars templates also have two extensions. The first one indicates the media type, and
+          the second one must be <code>.hbs</code> to tell Operator that it's a template (<code>faq.html.hbs</code>,
+          <code>metadata.json.hbs</code>, etc).
         </p>
       </li>
     </ol>
