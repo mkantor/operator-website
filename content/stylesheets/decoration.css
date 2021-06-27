@@ -7,8 +7,9 @@ html {
   --page: hsl(0deg, 0%, 90%);
   --content: hsl(0deg, 0%, 10%);
   --content-faded: hsl(0deg, 0%, 60%);
-  --highlight: hsl(188, 76%, 35%);
-  --selected: hsl(37, 88%, 48%);
+  --highlight: hsl(188deg, 76%, 35%);
+  --highlight-faded: hsl(188deg, 26%, 60%);
+  --selected: hsl(37deg, 88%, 48%);
   --block: hsl(0deg, 0%, 100%);
   --translucent: hsla(0deg, 0%, 50%, 0.5);
   --shadow: hsla(0deg, 0%, 100%, 0.75);
@@ -18,6 +19,7 @@ html {
     --page: hsl(0deg, 0%, 10%);
     --content: hsl(0deg, 0%, 90%);
     --content-faded: hsl(0deg, 0%, 40%);
+    --highlight-faded: hsl(188deg, 26%, 40%);
     --block: hsl(0deg, 0%, 0%);
     --shadow: hsla(0deg, 0%, 0%, 0.75);
   }
@@ -116,4 +118,10 @@ a:hover code {
 
 small {
   color: var(--content-faded);
+}
+small a {
+  color: var(--highlight-faded);
+}
+small a.current {
+  text-decoration-color: var(--highlight-faded);
 }

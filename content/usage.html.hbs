@@ -71,16 +71,20 @@
         </p>
         <p>
           Executables have two extensions, with the first one indicating the media type of the executable's output
-          (<code>contact.html.py</code>,
-          <code>styles.css.sh</code>, <code>dankmeme.jpg.exe</code>, etc). Operator actually does not care what the
-          second extension is, but you can use it to indicate the file type (so <code>contact.html.py</code> would be a
-          Python script that outputs HTML—for executables the <em>file type</em> is usually not the same as its
-          <em>output type</em>, although if you're feeling feisty then things like
-          <a href="https://github.com/mkantor/operator-website/blob/master/content/examples/wat.js.js">wat.js.js</a>
-          are certainly <a href="/examples/wat">possible</a>). Operator requires execute permissions on these files, and
-          scripts will typically need a
+          (<code>contact.html.py</code>, <code>styles.css.sh</code>, <code>dankmeme.jpg.exe</code>, etc). Operator
+          requires execute permissions on these files, and scripts will typically need a
           <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a>
           so your OS knows how to interpret them.
+        </p>
+        <p>
+          <small
+            >Operator doesn't care what the second extension is for executables, but you can use it to indicate the file
+            type&mdash;for example, <code>contact.html.py</code> would be a Python script which outputs HTML. In
+            executables the <em>file type</em> is usually not the same as its <em>output type</em>, although if you're
+            feeling feisty then things like
+            <a href="https://github.com/mkantor/operator-website/blob/master/content/examples/wat.js.js">wat.js.js</a>
+            are certainly <a href="/examples/wat">possible</a>.</small
+          >
         </p>
       </li>
       <li>
