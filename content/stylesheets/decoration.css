@@ -115,12 +115,15 @@ a:hover code {
   border-color: var(--selected);
 }
 
-small {
+small,
+p.small {
   color: var(--content-faded);
 }
-small a {
+small a,
+p.small a {
   color: var(--highlight-faded);
 }
-small a.current {
+small a.current,
+p.small a.current {
   text-decoration-color: var(--highlight-faded);
 }
