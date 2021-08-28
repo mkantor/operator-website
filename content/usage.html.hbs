@@ -128,9 +128,9 @@
         again, don't run Operator as yourself in production).
       </li>
       <li>
-        Any executables you put in the content directory must be trustworthy, and you should think carefully about what
-        effects they can have. An executable that could <code>rm -rf /</code>, leak sensitive information, or fork bomb
-        your system would be a bad idea.
+        Any executables you put in the content directory must be trusted. You should think carefully about what effects
+        they can have and how they handle request data. An executable that could <code>rm -rf /</code>, leak sensitive
+        information, or fork bomb your system would be a bad idea.
       </li>
     </ul>
   </article>
