@@ -97,6 +97,11 @@ figure img {
   width: 100%;
 }
 
+small,
+p.small {
+  font-size: 0.75em;
+}
+
 p.error {
   text-align: center;
 }

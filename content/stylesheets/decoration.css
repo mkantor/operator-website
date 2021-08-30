@@ -6,7 +6,7 @@ decorations.
 html {
   --page: hsl(0deg, 0%, 90%);
   --content: hsl(0deg, 0%, 10%);
-  --content-faded: hsl(0deg, 0%, 60%);
+  --content-faded: hsl(0deg, 0%, 50%);
   --highlight: hsl(188deg, 76%, 35%);
   --highlight-faded: hsl(188deg, 26%, 60%);
   --selected: hsl(37deg, 88%, 48%);
@@ -18,7 +18,6 @@ html {
   html {
     --page: hsl(0deg, 0%, 10%);
     --content: hsl(0deg, 0%, 90%);
-    --content-faded: hsl(0deg, 0%, 40%);
     --highlight-faded: hsl(188deg, 26%, 40%);
     --block: hsl(0deg, 0%, 0%);
     --shadow: hsla(0deg, 0%, 0%, 0.75);
@@ -116,12 +115,15 @@ a:hover code {
   border-color: var(--selected);
 }
 
-small {
+small,
+p.small {
   color: var(--content-faded);
 }
-small a {
+small a,
+p.small a {
   color: var(--highlight-faded);
 }
-small a.current {
+small a.current,
+p.small a.current {
   text-decoration-color: var(--highlight-faded);
 }

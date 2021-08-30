@@ -1,3 +1,7 @@
 #!/usr/bin/env node
-const thisFile = require('fs').readFileSync(module.filename, 'utf8')
-console.log(`alert("me IRL:\\n\\n" + ${JSON.stringify(thisFile)})`)
+const me = require('fs').readFileSync(module.filename, 'utf8')
+process.stdout.write(`document.addEventListener('DOMContentLoaded', _ => {
+  document.body.style.whiteSpace = 'pre'
+  document.body.style.fontFamily = 'monospace'
+  document.body.textContent = ${JSON.stringify(me)}
+})`)
