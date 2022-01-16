@@ -10,7 +10,7 @@ html {
   --biggest-space: 100px;
   --code-font-size: 0.72rem;
 
-  font-size: 1.25em;
+  font-size: 1.2em;
 }
 
 body {
@@ -31,6 +31,7 @@ pre,
 ul,
 div,
 article,
+details,
 figure,
 header,
 footer,
@@ -49,6 +50,7 @@ footer,
 .group ul,
 .group div,
 .group article,
+.group details,
 .group figure,
 .group header,
 .group footer,
@@ -108,6 +110,7 @@ p.error {
 
 pre {
   padding: calc(var(--smaller-space) / 2) var(--smaller-space);
+  font-size: var(--code-font-size);
 }
 code {
   font-size: var(--code-font-size);
@@ -134,10 +137,6 @@ img.inline {
   vertical-align: middle;
 }
 
-details {
-  margin-top: var(--standard-space);
-  margin-bottom: var(--standard-space);
-}
 details summary {
   padding-left: 0.3em;
 }
