@@ -110,6 +110,7 @@ p.error {
 
 pre {
   padding: calc(var(--smaller-space) / 2) var(--smaller-space);
+  font-size: var(--code-font-size);
 }
 code {
   font-size: var(--code-font-size);
