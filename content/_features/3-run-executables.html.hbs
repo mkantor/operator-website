@@ -21,3 +21,12 @@
   <pre><a href="https://github.com/mkantor/operator-website/blob/master/content/examples/polyglot/bar.html.py">bar.html.py</a>: {{get "/examples/polyglot/bar"}}</pre>
   <pre><a href="https://github.com/mkantor/operator-website/blob/master/content/examples/polyglot/baz.html.awk">baz.html.awk</a>: {{get "/examples/polyglot/baz"}}</pre>
 </div>
+
+<p>
+  Executables are provided
+  <a
+    href="https://docs.rs/operator/{{get "/_current-operator-release/version"}}/operator/content/struct.RenderData.html"
+    >render data</a
+  >
+  encoded as JSON in an environment variable named <code>OPERATOR_RENDER_DATA</code>.
+</p>
