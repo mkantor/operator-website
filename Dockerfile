@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 debian:stable-slim
 
-ARG operator_version=0.5.0
-ARG operator_hash=2a867fa0dfb37e8ccab8314d8cecfd491f238263ec23a8e0a04d967edd28bd5b
+ARG operator_version=0.6.0
+ARG operator_hash=afdeed7b5f1a5cece6c94003b2cd123c445aca86f603b87b00ff14ed397eab9e
 
 SHELL ["/bin/bash", "-c"]
 
