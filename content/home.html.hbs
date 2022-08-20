@@ -29,24 +29,23 @@
       release like so:
     </p>
 
-    {{!-- TODO: Improve code style here once <https://github.com/sunng87/handlebars-rust/pull/518> lands. --}}
     <div class="install-instructions">
       <details>
         <summary>Linux <small>x86-64</small></summary>
-{{~>_install-commands.html.hbs
-  os="linux"
-  version=(get "/_current-operator-release/version")
-  hash=(get "/_current-operator-release/hash-linux-x86-64")
-~}}
+        {{~>_install-commands.html.hbs
+          os="linux"
+          version=(get "/_current-operator-release/version")
+          hash=(get "/_current-operator-release/hash-linux-x86-64")
+        ~}}
       </details>
 
       <details>
         <summary>macOS <small>x86-64</small></summary>
-{{~>_install-commands.html.hbs
-  os="macos"
-  version=(get "/_current-operator-release/version")
-  hash=(get "/_current-operator-release/hash-macos-x86-64")
-~}}
+        {{~>_install-commands.html.hbs
+          os="macos"
+          version=(get "/_current-operator-release/version")
+          hash=(get "/_current-operator-release/hash-macos-x86-64")
+        ~}}
       </details>
     </div>
   </article>
