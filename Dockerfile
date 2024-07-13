@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 debian:stable-slim
+FROM --platform=linux/amd64 debian:bookworm-slim
 
 ARG operator_version=0.6.3
 ARG operator_hash=866f21aadffea055e16b9fe8c5e76355fff57112abd74167c6b9dc1a813ebddf
