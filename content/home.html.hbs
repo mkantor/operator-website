@@ -29,25 +29,23 @@
       release like so:
     </p>
 
-    <div class="install-instructions">
-      <details>
-        <summary>Linux <small>x86-64</small></summary>
-        {{~>_install-commands.html.hbs
-          os="linux"
-          version=(get "/_current-operator-release/version")
-          hash=(get "/_current-operator-release/hash-linux-x86-64")
-        ~}}
-      </details>
+    <details open name="install-instructions">
+      <summary>Linux <small>x86-64</small></summary>
+      {{~>_install-commands.html.hbs
+        os="linux"
+        version=(get "/_current-operator-release/version")
+        hash=(get "/_current-operator-release/hash-linux-x86-64")
+      ~}}
+    </details>
 
-      <details>
-        <summary>macOS <small>x86-64</small></summary>
-        {{~>_install-commands.html.hbs
-          os="macos"
-          version=(get "/_current-operator-release/version")
-          hash=(get "/_current-operator-release/hash-macos-x86-64")
-        ~}}
-      </details>
-    </div>
+    <details name="install-instructions">
+      <summary>macOS <small>x86-64</small></summary>
+      {{~>_install-commands.html.hbs
+        os="macos"
+        version=(get "/_current-operator-release/version")
+        hash=(get "/_current-operator-release/hash-macos-x86-64")
+      ~}}
+    </details>
   </article>
 
   {{get "/_footer"}}
