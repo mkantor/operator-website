@@ -9,13 +9,16 @@ BEGIN {
   "date +%Z" | getline timezone;
   close("date +%Z");
 
+  # coerce to a number to avoid leading zeroes
+  day_of_month=day_of_month + 0;
+
   printf "happy %s the ", day_of_week;
-  if (day_of_month == "1") {
-    printf "1st";
-  } else if (day_of_month == "2") {
-    printf "2nd";
-  } else if (day_of_month == "3") {
-    print "3rd";
+  if (day_of_month == "1" || day_of_month == "21" || day_of_month == "31") {
+    printf "%sst", day_of_month;
+  } else if (day_of_month == "2" || day_of_month == "22") {
+    printf "%snd", day_of_month;
+  } else if (day_of_month == "3" || day_of_month == "23") {
+    printf "%srd", day_of_month;
   } else {
     printf "%sth", day_of_month;
   }
