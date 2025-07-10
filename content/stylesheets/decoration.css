@@ -60,13 +60,16 @@ header h1 a {
 }
 
 pre,
-ul.commands {
+ul.commands,
+.data {
   background-color: var(--block);
   border-color: var(--translucent);
   border-radius: 0.3em;
   border-width: 1px;
   border-style: solid;
   font-family: monospace;
+  white-space: nowrap;
+  overflow: auto;
 }
 ul.commands li:before {
   /* the "prompt" */
@@ -94,11 +97,15 @@ details summary {
 details:not([open]) summary {
   outline-color: var(--selected);
 }
-details:not([open]) summary::marker {
+/* ::before can be used to customize markers */
+details:not([open]) summary::marker,
+details:not([open]) summary::before {
   color: var(--highlight);
 }
 details summary:hover::marker,
-details summary:focus::marker {
+details summary:focus::marker,
+details summary:hover::before,
+details summary:focus::before {
   color: var(--selected);
 }
 

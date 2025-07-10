@@ -12,11 +12,21 @@
   <code>{{get "/examples/random"}}</code>
 </p>
 
-<p>
-  Templates are provided
-  <a
-    href="https://docs.rs/operator/{{get "/_current-operator-release/version"}}/operator/content/struct.RenderData.html"
-    >render data</a
-  >
-  with information about the request, the server, etc.
-</p>
+<div class="group">
+  <p>
+    Templates are provided
+    <a
+      href="https://docs.rs/operator/{{get "/_current-operator-release/version"}}/operator/content/struct.RenderData.html"
+      >render data</a
+    >
+    with information about the content directory, the request, the server, etc. For example, here's
+    the data that was provided to this template:
+  </p>
+
+  {{!--
+    Technically this will print the render data visible to the executable, which is currently the
+    same as the data provided to this template, but may not be forever (e.g. if Operator adds
+    path-specific render data).
+  --}}
+  {{get "/examples/render-data"}}
+</div>
