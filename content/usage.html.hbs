@@ -14,7 +14,27 @@
       are a bunch of sample content directories
       <a href="https://github.com/mkantor/operator/blob/master/samples">in the repository</a>.
     </p>
-    <p>To learn more, run <code>operator --help</code> or <code>operator &lt;SUBCOMMAND&gt; --help</code>.</p>
+    <div class="group">
+      <p>
+        To learn more, use the <code>--help</code> option (alone or with a subcommand):
+      </p>
+      <details name="help">
+        <summary><code>operator --help</code></summary>
+        {{get "/_operator-help"}}
+      </details>
+      <details name="help">
+        <summary><code>operator eval --help</code></summary>
+        {{get "/_operator-help" subcommand="eval"}}
+      </details>
+      <details name="help">
+        <summary><code>operator get --help</code></summary>
+        {{get "/_operator-help" subcommand="get"}}
+      </details>
+      <details name="help">
+        <summary><code>operator serve --help</code></summary>
+        {{get "/_operator-help" subcommand="serve"}}
+      </details>
+    </div>
   </article>
 
   <article>

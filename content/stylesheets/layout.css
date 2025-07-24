@@ -140,6 +140,7 @@ img.inline {
 details summary {
   padding-left: 0.3em;
 }
+details pre,
 details .commands {
   margin-top: var(--smaller-space);
   margin-bottom: var(--smaller-space);
