@@ -1,0 +1,35 @@
+.expandable-tree {
+  --marker-width: 0.7rem;
+}
+
+.expandable-tree ul {
+  margin-left: var(--marker-width);
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.expandable-tree > ul {
+  margin-left: 0;
+}
+
+.expandable-tree details {
+  margin: 0;
+}
+.expandable-tree summary {
+  font-weight: bold;
+  list-style-type: none;
+  padding-left: 0;
+}
+.expandable-tree summary::before {
+  display: inline-block;
+  width: var(--marker-width);
+  font-size: 0.8em;
+  vertical-align: 10%;
+}
+.expandable-tree details[open] summary::before {
+  content: "▼";
+}
+.expandable-tree details:not([open]) summary::before {
+  content: "▶";
+}

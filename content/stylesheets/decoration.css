@@ -68,8 +68,11 @@ ul.commands,
   border-width: 1px;
   border-style: solid;
   font-family: monospace;
-  white-space: nowrap;
   overflow: auto;
+}
+ul.commands,
+.data {
+  white-space: nowrap;
 }
 ul.commands li:before {
   /* the "prompt" */
