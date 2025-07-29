@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 debian:bookworm-slim
 
-ARG operator_version=0.6.5
-ARG operator_hash=68b8f0a7c1e53f34d62e4c4b4d188fcd56aad481769bba46d8fdc3b5367590b5
+ARG operator_version=0.6.6
+ARG operator_hash=bd1a14e75446f49faff5889879b67a08dd25262939210f04d851f91cac5b6b1c
 
 SHELL ["/bin/bash", "-c"]
 
