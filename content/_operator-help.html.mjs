@@ -19,6 +19,11 @@ const childProcess = exec(
   subcommand === undefined
     ? `"${operatorPath}" --help`
     : `"${operatorPath}" "${subcommand}" --help`,
+  {
+    env: {
+      COLUMNS: 85, // This is tailored to the current design.
+    },
+  },
 )
 
 process.stdout.write('<pre>')
